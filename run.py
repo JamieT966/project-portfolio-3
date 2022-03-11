@@ -45,4 +45,8 @@ def movie_choice():
     else:
         print('Sorry, we were looking for a number between 1 and 4.')
 
-movie_choice()
+
+def main():
+    movie_choice()
+
+main()
