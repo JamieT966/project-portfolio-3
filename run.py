@@ -30,4 +30,19 @@ def movie_choice():
     print('4. Iron Man\n')
     movie_choice = input('Enter Movie Choice by entering 1, 2, 3 or 4.\n')
 
+    if movie_choice == '1':
+        print('Batman')
+        return 'The Batman'
+    elif movie_choice == '2':
+        print('Star Wars')
+        return 'Star Wars: The Empire Strikes Back'
+    elif movie_choice == '3':
+        print('LOTR')
+        return 'Lord of the Rings: The Two Towers'
+    elif movie_choice == '4':
+        print('Iron Man')
+        return 'Iron Man'
+    else:
+        print('Sorry, we were looking for a number between 1 and 4.')
+
 movie_choice()
