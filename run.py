@@ -18,6 +18,7 @@ movie_list = movies.get_all_values()
 
 def movie_choice():
     """
+    
     Introduction, ticket prices and max no. of tickets per transaction.
     Presents user with choice of 4 movies and asks user for input.
     """
@@ -50,6 +51,7 @@ def movie_choice():
 
 def number_of_seats():
     """
+
     Asks user for input. Number of seats required up to a maximum of 6.
     """
     print('Please Choose the number of seats you would like.')
@@ -60,32 +62,44 @@ def number_of_seats():
 
         if seat_choice == '1':
             print('1 Seat Chosen')
-            return '1'
+            return [1, '', '', '']
         elif seat_choice == '2':
             print('2 Seats Chosen')
-            return '2'
+            return [2, '', '', '']
         elif seat_choice == '3':
             print('3 Seats Chosen')
-            return '3'
+            return [3, '', '', '']
         elif seat_choice == '4':
             print('4 Seats Chosen')
-            return '4'
+            return [4, '', '', '']
         elif seat_choice == '5':
             print('5 Seats Chosen')
-            return '5'
+            return [5, '', '', '']
         elif seat_choice == '6':
             print('6 Seats Chosen')
-            return '6'
+            return [6, '', '', '']
         else:
             print('Sorry, we were looking for a number between 1 and 6.\n')
+
+
+def check_available_seats(seat):
+    """
+
+    Currently appends latest list to Google Sheets
+    """
+    print('Checking available seats...')
+    movies = SHEET.worksheet('movies')
+    movies.append_row(seat)
 
 
 def main():
     movie_select = movie_choice()
     seat_choice = number_of_seats()
+    check_available_seats(seat_choice)
     print(movie_select)
     print(seat_choice)
 
 
 main()
 
+print(movie_list)
