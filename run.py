@@ -49,6 +49,9 @@ def movie_choice():
 
 
 def number_of_seats():
+    """
+    Asks user for input. Number of seats required up to a maximum of 6.
+    """
     print('Please Choose the number of seats you would like.')
     print('Remember, the maximum number of seats is 6.\n')
 
