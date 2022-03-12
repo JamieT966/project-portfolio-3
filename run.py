@@ -30,18 +30,18 @@ def movie_choice():
     print('4. Iron Man\n')
 
     while True:
-        movie_choice = input('Enter Movie Choice by entering 1, 2, 3 or 4.\n')
+        movie_select = input('Enter Movie Choice by entering 1, 2, 3 or 4.\n')
 
-        if movie_choice == '1':
+        if movie_select == '1':
             print('Batman\n')
             return 'The Batman'
-        elif movie_choice == '2':
+        elif movie_select == '2':
             print('Star Wars\n')
             return 'Star Wars: The Empire Strikes Back'
-        elif movie_choice == '3':
+        elif movie_select == '3':
             print('LOTR\n')
             return 'Lord of the Rings: The Two Towers'
-        elif movie_choice == '4':
+        elif movie_select == '4':
             print('Iron Man\n')
             return 'Iron Man'
         else:
@@ -76,9 +76,13 @@ def number_of_seats():
         else:
             print('Sorry, we were looking for a number between 1 and 6.\n')
 
+
 def main():
-    movie_choice()
-    number_of_seats()   
-    print({movie_choice})
+    movie_select = movie_choice()
+    seat_choice = number_of_seats()
+    print(movie_select)
+    print(seat_choice)
+
+
 main()
 
