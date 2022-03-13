@@ -16,6 +16,8 @@ movies = SHEET.worksheet('movies')
 
 movie_list = movies.get_all_values()
 
+movies = [0,0,0,0]
+
 def movie_choice():
     """
     
