@@ -60,7 +60,7 @@ def number_of_seats(index):
     print('Remember, the maximum number of seats is 6.\n')
 
     while True:
-        seat_choice = input('Number of Seats:')
+        seat_choice = input('Number of Seats:\n')
 
         if seat_choice.isdigit():
             if int(seat_choice) >= 1 and int(seat_choice) <= 6:
