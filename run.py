@@ -69,6 +69,7 @@ def number_of_seats(index):
                 return
         print('Sorry, we were looking for a number between 1 and 6')
 
+
 def check_available_seats(index):
     """
 
@@ -77,7 +78,7 @@ def check_available_seats(index):
     Adds users choice of seats to current value.
     Updates latest seat figures to Google Sheets.
     """
-    print('Checking available seats...')
+    print('Booking Seats...')
     seat_list = SHEET.worksheet('movies')
     seats = SHEET.worksheet('movies').get_all_values()
     available_seats = seats[-1]
@@ -85,7 +86,41 @@ def check_available_seats(index):
     for i, j in zip(available_seats, movies):
         new_seats.append(int(i) + j)
     seat_list.append_row(new_seats)
-    print('Seats selected.')
+    print('Seats booked.')
+
+
+def snack_choice():
+    """
+    
+    Presents user with 4 choices of snack and their prices and a choice of no snack.
+    """
+    print('Would you like any snacks?.\n')
+    print('1. Large Popcorn - €4')
+    print('2. Nachos - €5')
+    print('3. Big bag of sweets - €3')
+    print('4. Hot Dog - €6')
+    print('5. No Snack\n')
+
+    while True:
+            snack_select = input('Choose a snack by entering 1, 2, 3, 4 or to skip enter 5.\n')
+
+            if snack_select == '1':
+                print('Large Popcorn\n')
+                return '4'
+            elif snack_select == '2':
+                print('Nachos\n')
+                return '5'
+            elif snack_select == '3':
+                print('Big bag of sweets\n')
+                return '3'
+            elif snack_select == '4':
+                print('Hot Dog\n')
+                return '6'
+            elif snack_select == '5':
+                print('No Snack\n')
+                return '0'
+            else:
+                print('Sorry, we were looking for a number between 1 and 5.\n')
 
 
 def main():
@@ -96,8 +131,8 @@ def main():
     movie_select = movie_choice()
     number_of_seats(movie_select)
     check_available_seats(movies)
-    #print(movie_select)
-    #print(movies)
+    snack_choice()
+    print(movies)
 
 
 main()
