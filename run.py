@@ -80,11 +80,18 @@ def check_available_seats(index):
     """
     print('Checking available seats...')
     movies = SHEET.worksheet('movies')
+    seats = SHEET.worksheet('movies').get_all_values()
+    available_seats = seats[-1]
+    print(available_seats)
     movies.append_row(index)
     print('Seats selected.')
 
 
 def main():
+    """
+
+    Runs all functions
+    """
     movie_select = movie_choice()
     number_of_seats(movie_select)
     check_available_seats(movies)
