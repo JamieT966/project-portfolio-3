@@ -84,7 +84,6 @@ def check_available_seats(index):
     remaining_seats = []
     for i, j in zip(available_seats, movies):
         remaining_seats.append(int(i) - j)
-    print(remaining_seats)
     seat_list.append_row(remaining_seats)
     print('Seats selected.')
 
