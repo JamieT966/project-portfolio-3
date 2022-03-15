@@ -37,19 +37,19 @@ def movie_choice():
 
         if movie_select == '1':
             print('Batman\n')
-            return 'The Batman'
+            return '0'
             number_of_seats(0)
         elif movie_select == '2':
             print('Star Wars\n')
-            return 'Star Wars: The Empire Strikes Back'
+            return '1'
             number_of_seats(1)
         elif movie_select == '3':
             print('LOTR\n')
-            return 'Lord of the Rings: The Two Towers'
+            return '2'
             number_of_seats(2)
         elif movie_select == '4':
             print('Iron Man\n')
-            return 'Iron Man'
+            return '3'
             number_of_seats(3)
         else:
             print('Sorry, we were looking for a number between 1 and 4.\n')
@@ -66,46 +66,30 @@ def number_of_seats(index):
     while True:
         seat_choice = input('Number of Seats:')
 
-        if seat_choice == '1':
-            print('1 Seat Chosen')
-            return [1, '', '', '']
-        elif seat_choice == '2':
-            print('2 Seats Chosen')
-            return [2, '', '', '']
-        elif seat_choice == '3':
-            print('3 Seats Chosen')
-            return [3, '', '', '']
-        elif seat_choice == '4':
-            print('4 Seats Chosen')
-            return [4, '', '', '']
-        elif seat_choice == '5':
-            print('5 Seats Chosen')
-            return [5, '', '', '']
-        elif seat_choice == '6':
-            print('6 Seats Chosen')
-            return [6, '', '', '']
-        else:
-            print('Sorry, we were looking for a number between 1 and 6.\n')
+        if seat_choice.isdigit():
+            if int(seat_choice) >= 1 and int(seat_choice) <= 6:
+                global movies
+                movies[int(index)] = int(seat_choice)
+                return
+        print('Sorry, we were looking for a number between 1 and 6')
 
-
-def check_available_seats(seat):
+def check_available_seats(index):
     """
 
     Currently appends latest list to Google Sheets
     """
     print('Checking available seats...')
     movies = SHEET.worksheet('movies')
-    movies.append_row(seat)
+    movies.append_row(index)
     print('Seats selected.')
 
 
 def main():
     movie_select = movie_choice()
-    seat_choice = number_of_seats_batman()
-    #seat_choice = number_of_seats_star_wars()
-    check_available_seats(seat_choice)
+    number_of_seats(movie_select)
+    check_available_seats(movies)
     print(movie_select)
-    print(seat_choice)
+    print(movies)
 
 
 main()
