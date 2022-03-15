@@ -74,17 +74,17 @@ def check_available_seats(index):
 
     Pulls latest seats by slicing off bottom row of Google Sheet.
     Takes user input of number of seats chosen.
-    Subtracts users choice of seats from current value of available seats.
+    Adds users choice of seats to current value.
     Updates latest seat figures to Google Sheets.
     """
     print('Checking available seats...')
     seat_list = SHEET.worksheet('movies')
     seats = SHEET.worksheet('movies').get_all_values()
     available_seats = seats[-1]
-    remaining_seats = []
+    new_seats = []
     for i, j in zip(available_seats, movies):
-        remaining_seats.append(int(i) - j)
-    seat_list.append_row(remaining_seats)
+        new_seats.append(int(i) + j)
+    seat_list.append_row(new_seats)
     print('Seats selected.')
 
 
