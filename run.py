@@ -102,26 +102,38 @@ def snack_choice():
     print('5. No Snack\n')
 
     while True:
-            snack_select = input('Choose a snack by entering 1, 2, 3, 4 or to skip enter 5.\n')
+        snack_select = input('Choose a snack by entering 1, 2, 3, 4 or to skip enter 5.\n')
 
-            if snack_select == '1':
-                print('Large Popcorn\n')
-                return '4'
-            elif snack_select == '2':
-                print('Nachos\n')
-                return '5'
-            elif snack_select == '3':
-                print('Big bag of sweets\n')
-                return '3'
-            elif snack_select == '4':
-                print('Hot Dog\n')
-                return '6'
-            elif snack_select == '5':
-                print('No Snack\n')
-                return '0'
-            else:
-                print('Sorry, we were looking for a number between 1 and 5.\n')
+        if snack_select == '1':
+            print('Large Popcorn\n')
+            return '4'
+        elif snack_select == '2':
+            print('Nachos\n')
+            return '5'
+        elif snack_select == '3':
+            print('Big bag of sweets\n')
+            return '3'
+        elif snack_select == '4':
+            print('Hot Dog\n')
+            return '6'
+        elif snack_select == '5':
+            print('No Snack\n')
+            return '0'
+        else:
+            print('Sorry, we were looking for a number between 1 and 5.\n')
 
+
+def calculate_price():
+    """
+    
+    Calculates the total cost of all tickets purchased and any snacks.
+    """
+    ticket_total = 0
+
+    for i in range(0, len(movies)):
+        ticket_total = ticket_total + movies[i] * 10
+
+    print('Total ticket cost:', ticket_total)
 
 def main():
     """
@@ -132,6 +144,7 @@ def main():
     number_of_seats(movie_select)
     check_available_seats(movies)
     snack_choice()
+    calculate_price()
     print(movies)
 
 
