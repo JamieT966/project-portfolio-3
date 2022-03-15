@@ -94,17 +94,18 @@ def snack_choice():
     
     Presents user with 4 choices of snack and their prices and a choice of no snack.
     """
-    print('Would you like any snacks?.\n')
-    print('1. Large Popcorn - €4')
-    print('2. Nachos - €5')
-    print('3. Big bag of sweets - €3')
-    print('4. Hot Dog - €6')
-    print('5. No Snacks\n')
+    
 
     global snack_price
     snack_price = 0
-    snack_select = input('Choose a snack by entering 1, 2, 3, 4 or to skip type 5.\n')
     while True:
+        print('Would you like any snacks?.\n')
+        print('1. Large Popcorn - €4')
+        print('2. Nachos - €5')
+        print('3. Big bag of sweets - €3')
+        print('4. Hot Dog - €6')
+        print('5. No Snacks\n')
+        snack_select = input('Choose a snack by entering 1, 2, 3, 4 or to skip type 5.\n')
         if snack_select == '1':
             print('Large Popcorn\n')
             snack_price += 4
@@ -137,7 +138,7 @@ def snack_choice():
                 break
         else:
             print('Sorry, we were looking for a number between 1 and 5.\n')
-            return False
+            
 
 
 def is_order_complete():
@@ -148,8 +149,10 @@ def is_order_complete():
     print('Are you done with your order?')
     order_complete = input('Yes or No?\n')
     if order_complete == 'yes':
+        print(order_complete + " test")
         return True
     elif order_complete == 'no':
+        print(order_complete + " test")
         return False
     else:
         print('We were looking for an answer of yes or no, please try again.')
