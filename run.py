@@ -163,8 +163,8 @@ def calculate_price():
     for i in range(0, len(movies)):
         ticket_total = ticket_total + movies[i] * 10
 
-    print('Total ticket cost:', ticket_total)
-    print(snack_price)
+    overall_total = int(ticket_total) + int(snack_price)
+    print('The total price of tickets and snacks is €', overall_total)
 
 def main():
     """
@@ -176,7 +176,7 @@ def main():
     check_available_seats(movies)
     snack_choice()
     calculate_price()
-    print(movies)
+    print(movie_select)
 
 
 main()
