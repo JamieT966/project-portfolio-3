@@ -153,6 +153,20 @@ def is_order_complete():
         print('We were looking for an answer of yes or no, please try again.')
 
 
+def get_contact_details():
+    """
+    
+    Asks user for name and phone number to be used later.
+    """
+    name = input('Please write your name: \n')
+    while True:
+        try:
+            phone_number = int(input('Please write your phone number: '))
+            break
+        except (ValueError):
+            print('Only numbers please\n')
+
+
 def calculate_price():
     """
     
@@ -180,3 +194,4 @@ def main():
 
 
 main()
+#get_contact_details()
