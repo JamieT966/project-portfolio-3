@@ -99,28 +99,60 @@ def snack_choice():
     print('2. Nachos - €5')
     print('3. Big bag of sweets - €3')
     print('4. Hot Dog - €6')
-    print('5. No Snack\n')
+    print('5. No Snacks\n')
 
+    global snack_price
+    snack_price = 0
+    snack_select = input('Choose a snack by entering 1, 2, 3, 4 or to skip type 5.\n')
     while True:
-        snack_select = input('Choose a snack by entering 1, 2, 3, 4 or to skip enter 5.\n')
-
         if snack_select == '1':
             print('Large Popcorn\n')
-            return '4'
+            snack_price += 4
+            order_complete = is_order_complete()
+            if order_complete == True:
+                break
         elif snack_select == '2':
             print('Nachos\n')
-            return '5'
+            snack_price += 5
+            order_complete = is_order_complete()
+            if order_complete == True:
+                break
         elif snack_select == '3':
             print('Big bag of sweets\n')
-            return '3'
+            snack_price += 3
+            order_complete = is_order_complete()
+            if order_complete == True:
+                break
         elif snack_select == '4':
             print('Hot Dog\n')
-            return '6'
+            snack_price += 5
+            order_complete = is_order_complete()
+            if order_complete == True:
+                break
         elif snack_select == '5':
-            print('No Snack\n')
-            return '0'
+            print('No More Snacks\n')
+            snack_price += 0
+            order_complete = is_order_complete()
+            if order_complete == True:
+                break
         else:
             print('Sorry, we were looking for a number between 1 and 5.\n')
+            return False
+
+
+def is_order_complete():
+    """
+    
+    Asks user if order is complete, if yes then end while loop. If no then continue with order.
+    """
+    print('Are you done with your order?')
+    order_complete = input('Yes or No?\n')
+    if order_complete == 'yes':
+        return True
+    elif order_complete == 'no':
+        return False
+    else:
+        print('We were looking for an answer of yes or no, please try again.')
 
 
 def calculate_price():
@@ -134,6 +166,7 @@ def calculate_price():
         ticket_total = ticket_total + movies[i] * 10
 
     print('Total ticket cost:', ticket_total)
+    print(snack_price)
 
 def main():
     """
