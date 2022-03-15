@@ -12,10 +12,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('love_movies')
 
-movies = SHEET.worksheet('movies')
-
-movie_list = movies.get_all_values()
-
 movies = [0,0,0,0]
 
 def movie_choice():
@@ -76,14 +72,20 @@ def number_of_seats(index):
 def check_available_seats(index):
     """
 
-    Currently appends latest list to Google Sheets
+    Pulls latest seats by slicing off bottom row of Google Sheet.
+    Takes user input of number of seats chosen.
+    Subtracts users choice of seats from current value of available seats.
+    Updates latest seat figures to Google Sheets.
     """
     print('Checking available seats...')
-    movies = SHEET.worksheet('movies')
+    seat_list = SHEET.worksheet('movies')
     seats = SHEET.worksheet('movies').get_all_values()
     available_seats = seats[-1]
-    print(available_seats)
-    movies.append_row(index)
+    remaining_seats = []
+    for i, j in zip(available_seats, movies):
+        remaining_seats.append(int(i) - j)
+    print(remaining_seats)
+    seat_list.append_row(remaining_seats)
     print('Seats selected.')
 
 
@@ -95,10 +97,8 @@ def main():
     movie_select = movie_choice()
     number_of_seats(movie_select)
     check_available_seats(movies)
-    print(movie_select)
-    print(movies)
+    #print(movie_select)
+    #print(movies)
 
 
 main()
-
-print(movie_list)
