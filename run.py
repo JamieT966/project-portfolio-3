@@ -94,8 +94,6 @@ def snack_choice():
     
     Presents user with 4 choices of snack and their prices and a choice of no snack.
     """
-    
-
     global snack_price
     snack_price = 0
     while True:
@@ -140,7 +138,6 @@ def snack_choice():
             print('Sorry, we were looking for a number between 1 and 5.\n')
             
 
-
 def is_order_complete():
     """
     
@@ -149,10 +146,8 @@ def is_order_complete():
     print('Are you done with your order?')
     order_complete = input('Yes or No?\n')
     if order_complete == 'yes':
-        print(order_complete + " test")
         return True
     elif order_complete == 'no':
-        print(order_complete + " test")
         return False
     else:
         print('We were looking for an answer of yes or no, please try again.')
