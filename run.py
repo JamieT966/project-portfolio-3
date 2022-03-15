@@ -157,6 +157,7 @@ def get_contact_details():
     """
     
     Asks user for name and phone number to be used later.
+    Validated using a try, except ValueError in a while loop.
     """
     name = input('Please write your name: \n')
     while True:
