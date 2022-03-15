@@ -124,7 +124,7 @@ def snack_choice():
                 break
         elif snack_select == '4':
             print('Hot Dog\n')
-            snack_price += 5
+            snack_price += 6
             order_complete = is_order_complete()
             if order_complete == True:
                 break
