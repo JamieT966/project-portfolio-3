@@ -39,6 +39,7 @@ def movie_choice():
 
     while True:
         movie_select = input('Enter Movie Choice by entering 1, 2, 3 or 4.\n')
+        movie_select.strip()
 
         if movie_select == '1':
             print('Batman\n')
@@ -72,6 +73,7 @@ def number_of_seats(index):
 
     while True:
         seat_choice = input('Number of Seats:\n')
+        seat_choice.strip().lower()
 
         if seat_choice.isdigit():
             if int(seat_choice) >= 1 and int(seat_choice) <= 6:
@@ -121,6 +123,7 @@ def snack_choice():
         print('5. No Snacks')
         print('If you would like to return to the movie selection page, please type "x" \n')
         snack_select = input('Choose a snack by entering 1, 2, 3, 4 or to skip type 5.\n')
+        snack_select.strip().lower()
         if snack_select == '1':
             print('Large Popcorn\n')
             snack_price += 4
@@ -171,6 +174,7 @@ def is_order_complete():
     clear()
     print('Are you done with your order?')
     order_complete = input('Yes or No?\n')
+    order_complete.strip().lower()
     if order_complete == 'yes':
         return True
     elif order_complete == 'no':
@@ -188,7 +192,10 @@ def get_contact_details():
     print('For the booking we will need your name and phone number. Please fill out both below\n')
     name = input('Please write your name: \n')
     phone_number = input('Please write your phone number: \n')
+    while not phone_number.isdigit():
+        print('no num')
     calculate_price(name, phone_number)
+        
 
 def calculate_price(name, phone_number):
     """
@@ -220,6 +227,6 @@ def main():
     get_contact_details()
 
 
-main()
-
+#main()
+get_contact_details()
 
