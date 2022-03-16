@@ -2,6 +2,8 @@ import gspread
 from os import system
 from pyfiglet import figlet_format
 from termcolor import colored
+import os
+import sys
 
 from google.oauth2.service_account import Credentials
 
@@ -94,7 +96,7 @@ def number_of_seats(index):
         print('Sorry, we were looking for a number between 1 and 6')
         if seat_choice == 'x':
             clear()
-            movie_choice()
+            os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 def check_available_seats(index):
@@ -172,7 +174,7 @@ def snack_choice():
             clear()
         elif snack_select == 'x':
             clear()
-            movie_choice()
+            os.execl(sys.executable, sys.executable, *sys.argv)
         else:
             print(colored('Sorry, we were looking for a number between 1 and 5.\n', color="red"))
             
