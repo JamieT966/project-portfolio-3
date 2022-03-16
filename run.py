@@ -209,7 +209,7 @@ def get_contact_details():
     Phone number is validated using a while loop with an .isdigit() == False
     """
     clear()
-    print('For the booking we will need your name and phone number. Please fill out both below\n')
+    print('For the booking we will need your name and phone number. Please fill out both below.\n')
     name = input(colored('Please write your name: \n', color="green"))
     phone_number = input(colored('Please write your phone number: \n', color="green"))
     while phone_number.isdigit() == False:
