@@ -175,8 +175,9 @@ def calculate_price(name, phone_number):
         ticket_total = ticket_total + movies[i] * 10
 
     overall_total = int(ticket_total) + int(snack_price)
-    print(name)
-    print(phone_number)
+
+    print('Thank you for booking', name)
+    print('If we need to contact you we will call this number:', phone_number)
     print('The total price of tickets and snacks is €', overall_total)
 
 def main():
@@ -189,7 +190,6 @@ def main():
     check_available_seats(movies)
     snack_choice()
     get_contact_details()
-    print(movie_select)
 
 
 main()
