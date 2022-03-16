@@ -80,6 +80,7 @@ def number_of_seats(index):
                 return
         print('Sorry, we were looking for a number between 1 and 6')
         if seat_choice == 'x':
+            clear()
             movie_choice()
 
 
@@ -126,31 +127,37 @@ def snack_choice():
             order_complete = is_order_complete()
             if order_complete == True:
                 break
+            clear()
         elif snack_select == '2':
             print('Nachos\n')
             snack_price += 5
             order_complete = is_order_complete()
             if order_complete == True:
                 break
+            clear()
         elif snack_select == '3':
             print('Big bag of sweets\n')
             snack_price += 3
             order_complete = is_order_complete()
             if order_complete == True:
                 break
+            clear()
         elif snack_select == '4':
             print('Hot Dog\n')
             snack_price += 6
             order_complete = is_order_complete()
             if order_complete == True:
                 break
+            clear()
         elif snack_select == '5':
             print('No More Snacks\n')
             snack_price += 0
             order_complete = is_order_complete()
             if order_complete == True:
                 break
+            clear()
         elif snack_select == 'x':
+            clear()
             movie_choice()
         else:
             print('Sorry, we were looking for a number between 1 and 5.\n')
