@@ -1,4 +1,5 @@
-import gspread 
+import gspread
+from os import system
 
 from google.oauth2.service_account import Credentials
 
@@ -14,6 +15,13 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('love_movies')
 
 movies = [0,0,0,0]
+
+def clear():
+    """
+    Clears the screen to allow for the next content to be displayed.
+    """
+    print('\033c')
+
 
 def movie_choice():
     """
@@ -57,6 +65,7 @@ def number_of_seats(index):
 
     Asks user for input. Number of seats required up to a maximum of 6.
     """
+    clear()
     print('Please Choose the number of seats you would like.')
     print('Remember, the maximum number of seats is 6.')
     print('If you would like to return to the movie selection page, please type "x" \n')
@@ -82,6 +91,7 @@ def check_available_seats(index):
     Adds users choice of seats to current value.
     Updates latest seat figures to Google Sheets.
     """
+    clear()
     print('Booking Seats...')
     seat_list = SHEET.worksheet('movies')
     seats = SHEET.worksheet('movies').get_all_values()
@@ -98,6 +108,7 @@ def snack_choice():
     
     Presents user with 4 choices of snack and their prices and a choice of no snack.
     """
+    clear()
     global snack_price
     snack_price = 0
     while True:
@@ -150,6 +161,7 @@ def is_order_complete():
     
     Asks user if order is complete, if yes then end while loop. If no then continue with order.
     """
+    clear()
     print('Are you done with your order?')
     order_complete = input('Yes or No?\n')
     if order_complete == 'yes':
@@ -165,6 +177,7 @@ def get_contact_details():
     
     Asks user for name and phone number to be used later.
     """
+    clear()
     print('For the booking we will need your name and phone number. Please fill out both below\n')
     name = input('Please write your name: \n')
     phone_number = input('Please write your phone number: \n')
@@ -176,6 +189,7 @@ def calculate_price(name, phone_number):
     Calculates the total cost of all tickets purchased and any snacks.
     Tells user their name, phone number and total.
     """
+    clear()
     ticket_total = 0
 
     for i in range(0, len(movies)):
