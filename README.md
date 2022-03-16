@@ -4,7 +4,7 @@
 
 [Github Repo](https://github.com/JamieT966/project-portfolio-3)
 
-Love Movies is in need of a cinema booking system. This booking system allows 
+Love Movies is in need of a cinema booking system. This booking system will allow Love Movies to have customers book cinema tickets online with various movie choices. Within the same booking system customers can order as many snacks as they like or none at all. At the end the customer is presented with their details and the total cost.
 
 ![Am I Responsive Image of Chemstore Quiz](media/responsive.png)
 
