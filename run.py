@@ -226,8 +226,8 @@ def calculate_price(name, phone_number):
     overall_total = int(ticket_total) + int(snack_price)
 
     print(colored(f'Thank you for booking, {name}.', color="cyan"))
-    print(colored(f'If we need to contact you we will call this number: {phone_number}', color="magenta"))
-    print(colored(f'The total price of tickets and snacks is €{overall_total}', color="yellow"))
+    print(colored(f'If we need to contact you we will call this number: {phone_number}', color="green"))
+    print(colored(f'The total price of tickets and snacks is €{overall_total}.', color="yellow"))
 
 def main():
     """
