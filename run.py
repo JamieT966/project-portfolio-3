@@ -96,7 +96,7 @@ def number_of_seats(index):
         print('Sorry, we were looking for a number between 1 and 6')
         if seat_choice == 'x':
             clear()
-            os.execl(sys.executable, sys.executable, *sys.argv)
+            "os.execl(sys.executable, sys.executable, *sys.argv)"
 
 
 def check_available_seats(index):
@@ -225,9 +225,9 @@ def calculate_price(name, phone_number):
 
     overall_total = int(ticket_total) + int(snack_price)
 
-    print('Thank you for booking', name)
-    print('If we need to contact you we will call this number:', phone_number)
-    print('The total price of tickets and snacks is €', overall_total)
+    print(colored(f'Thank you for booking, {name}.', color="cyan"))
+    print(colored(f'If we need to contact you we will call this number: {phone_number}', color="magenta"))
+    print(colored(f'The total price of tickets and snacks is €{overall_total}', color="yellow"))
 
 def main():
     """
