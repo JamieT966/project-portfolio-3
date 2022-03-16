@@ -24,14 +24,22 @@ def clear():
     print('\033c')
 
 
-def movie_choice():
+def introduction():
     """
-    
-    Introduction, ticket prices and max no. of tickets per transaction.
-    Presents user with choice of 4 movies and asks user for input.
+    Introduction screen to Love Movies using pyfiglet.
+    Asks user to press 'c' 
     """
     print('Welcome to\n')
     print(figlet_format('Love Movies', font = 'standard'))
+    input('Press any Enter key to continue\n')
+    clear()
+
+def movie_choice():
+    """
+    
+    Displays ticket prices and max no. of tickets per transaction.
+    Presents user with choice of 4 movies and asks user for input.
+    """
     print('Please select the movie you would like to see. All tickets cost €10.')
     print('Max number of tickets per transaction: 6.\n')
     print('1. The Batman')
@@ -223,6 +231,7 @@ def main():
 
     Runs all functions
     """
+    introduction()
     movie_select = movie_choice()
     number_of_seats(movie_select)
     check_available_seats(movies)
