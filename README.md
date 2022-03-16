@@ -6,67 +6,77 @@
 
 Love Movies is in need of a cinema booking system. This booking system will allow Love Movies to have customers book cinema tickets online with various movie choices. Within the same booking system customers can order as many snacks as they like or none at all. At the end the customer is presented with their details and the total cost.
 
-![Am I Responsive Image of Chemstore Quiz](media/responsive.png)
-
 **The business goals of this quiz:**
-* Adds something different to their training days.
-* Break up the monotony of training days that can last several hours. 
-* Ensure that clients are paying attention by testing their knowledge.
+* Allows booking of movies online which will increase sales as another sales channel has been opened.
+* Online booking means that customers are guaranteed a seat and will result in less unhappy customers.
+* Also allows the ordering of snacks online which will increase revenue.
 
 **The customer goals of this quiz:**
-* Clear, easy and intuitive to use the quiz.
-* Provide a fun and interactive quiz to users.
-* To achieve a passing score.
+* Clear and easy way to book their favourite movies with ease.
+* Provides customers with an easy way to order snacks.
+* Allows the customer to book multiple seats.
 
 ## **Features**
 
-### Start Page 
+### Love Movies | Introduction Screen
 
-* Start page features the Chemstore logo, a title, an image of chemical CPL symbols, links at the bottom to access the company's website, LinkedIn and Twitter. As well as a start button that initiates the quiz and a rules button that pops out a modal with rules and instructions.
+* The user is first met with a welcome screen introducing them to Love Movies. Featuring Love Movies written in a pyfiglet style. With the option to start the program in green colouring. 
 
-![Chemstore Quiz Start Menu](media/start.png)
+![Love Movies Introduction Screen](media/start.png)
 
-### Rules Modal
+### Love Movies | Movie Selection Screen
 
-* This modal displays the instructions and rules for the quiz.
+* This screen features information on ticket price cost and displays all current movies being shown at Love Movies. There is an input required of 1-4 depending on what movie a customer would like to see.
 
-![Chemstore Quiz Rules Modal](media/rules.png)
+![Love Movies Movie Selection Screen](media/rules.png)
 
-### Quiz Screen
+### Love Movies | Seat Selection Screen
 
-* The quiz screen displays the same logo and links at the bottom as all other pages on this quiz.
+* The seat selection screen asks the user how many tickets they would like. Below it tells the user the maximum amount of tickets that can be purchased.
 
-* There is a question section, an answer choice section containing four buttons with a choice in each. 
+* This screen also features an exit button, that when 'x' is input, will restart the program.
 
-* The quiz screen also features a next and restart quiz button.
+![Love Movies Seat Selection Screen](media/qscreen.png)
 
-![Quiz Screen](media/qscreen.png)
+### Love Movies | Snack Selection Screen
 
-### Correct
+* The customer is presented with a choice of snacks on this screen. The customer can choose between 4 snacks with an option for no snacks.
 
-* When a correct answer is selected the choice button that was selected will turn green with a message in the question zone displaying green correct text.
+* This screen also features an exit button, that when 'x' is input, will restart the program.
 
-![Chemstore Quiz Correct Answer](media/correct.png)
+![Love Movies Snack Selection Screen](media/correct.png)
 
-### Incorrect
+### Love Movies | Order Complete? Screen
 
-* When an incorrect answer is selected the choice button that was selected will turn red with a message in the question zone displaying red incorrect text.
+* When a customer has selected a snack from the snack selection screen they are taken to this screen asking if their order is complete. 
 
-![Chemstore Quiz Incorrect Answer](media/incorrect.png)
+* If the customer inputs yes they are taken to the next screen. If the customer inputs no they are taken back to the snack selection screen to chose another snack.
 
-### Result Page
+![Love Movies Order Complete? Screen](media/incorrect.png)
 
-* The result page shows when the quiz has finished and displays your score.
+### Love Movies | Contact Details Screen
 
-![Chemstore Quiz Result Page](media/result.png)
+* This screen prompts the user for their name and phone number.
+
+* The phone number input is then validated to ensure that it is a number.
+
+![Love Movies Details Screen](media/result.png)
+
+### Love Movies | End Screen
+
+* The end page will thank the user for booking using the name provided in the contact details screen.
+
+* It will then inform the user that if Love Movies has any issues or needs to contact them they will get in touch with the phone number provided in the contact details screen.
+
+![Love Movies End Screen](media/result.png)
 
 ### Features Left to Implement in The Future
 
-* In the future, I would like to add a certificate that is automatically generated based on the user inputs, such as name, score, etc.
+* Different ticket prices is something that could be looked at as a future development. For example, Adult, Child, Student. Love Movies could also implement different prices for different movies in the future.
 
-* I would also like to add more questions when I sit down with Chemstore to flesh out more content.
+* In the future, I would like to improve upon the Google Sheets database so any no coding person is able to enter and remove movies when necessary.
 
-* There is a possibility of removing the restart button in the future as this becomes less of a quiz and more of a test. This would only show if the user receives a failing grade.
+* Another feature to implement would be for each order to have a unique booking reference.
 
 ## **Testing**
 
