@@ -1,4 +1,5 @@
 import gspread 
+
 from google.oauth2.service_account import Credentials
 
 SCOPE = [
@@ -57,7 +58,8 @@ def number_of_seats(index):
     Asks user for input. Number of seats required up to a maximum of 6.
     """
     print('Please Choose the number of seats you would like.')
-    print('Remember, the maximum number of seats is 6.\n')
+    print('Remember, the maximum number of seats is 6.')
+    print('If you would like to return to the movie selection page, please type "x" \n')
 
     while True:
         seat_choice = input('Number of Seats:\n')
@@ -68,6 +70,8 @@ def number_of_seats(index):
                 movies[int(index)] = int(seat_choice)
                 return
         print('Sorry, we were looking for a number between 1 and 6')
+        if seat_choice == 'x':
+            movie_choice()
 
 
 def check_available_seats(index):
@@ -102,7 +106,8 @@ def snack_choice():
         print('2. Nachos - €5')
         print('3. Big bag of sweets - €3')
         print('4. Hot Dog - €6')
-        print('5. No Snacks\n')
+        print('5. No Snacks')
+        print('If you would like to return to the movie selection page, please type "x" \n')
         snack_select = input('Choose a snack by entering 1, 2, 3, 4 or to skip type 5.\n')
         if snack_select == '1':
             print('Large Popcorn\n')
@@ -134,6 +139,8 @@ def snack_choice():
             order_complete = is_order_complete()
             if order_complete == True:
                 break
+        elif snack_select == 'x':
+            movie_choice()
         else:
             print('Sorry, we were looking for a number between 1 and 5.\n')
             
