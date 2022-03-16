@@ -28,9 +28,9 @@ def clear():
 def introduction():
     """
     Introduction screen to Love Movies using pyfiglet.
-    Asks user to press 'c' 
+    Asks user to press 'Enter' 
     """
-    print('Welcome to\n')
+    print(' Welcome to\n')
     print(figlet_format('Love Movies', font = 'standard'))
     input(colored('Press Enter key to continue\n', color="green"))
     clear()
@@ -126,7 +126,7 @@ def snack_choice():
     global snack_price
     snack_price = 0
     while True:
-        print(colored('Would you like any snacks?.\n', color="green"))
+        print('Would you like any snacks?.\n')
         print('1. Large Popcorn - €4')
         print('2. Nachos - €5')
         print('3. Big bag of sweets - €3')
