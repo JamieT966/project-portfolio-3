@@ -1,5 +1,6 @@
 import gspread
 from os import system
+from pyfiglet import figlet_format
 
 from google.oauth2.service_account import Credentials
 
@@ -29,7 +30,8 @@ def movie_choice():
     Introduction, ticket prices and max no. of tickets per transaction.
     Presents user with choice of 4 movies and asks user for input.
     """
-    print('Welcome to Love Movies\n')
+    print('Welcome to\n')
+    print(figlet_format('Love Movies', font = 'standard'))
     print('Please select the movie you would like to see. All tickets cost €10.')
     print('Max number of tickets per transaction: 6.\n')
     print('1. The Batman')
@@ -187,7 +189,7 @@ def get_contact_details():
     """
     
     Asks user for name and phone number to be used later.
-    Phone number is verified using a while loop with an .isdigit() == False
+    Phone number is validated using a while loop with an .isdigit() == False
     """
     clear()
     print('For the booking we will need your name and phone number. Please fill out both below\n')
@@ -229,5 +231,3 @@ def main():
 
 
 main()
-#get_contact_details()
-
