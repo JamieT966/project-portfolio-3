@@ -18,10 +18,12 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('love_movies')
 
-movies = [0,0,0,0]
+movies = [0, 0, 0, 0]
+
 
 def clear():
     """
+
     Clears the screen to allow for the next content to be displayed.
     """
     print('\033c')
@@ -29,21 +31,24 @@ def clear():
 
 def introduction():
     """
+
     Introduction screen to Love Movies using pyfiglet.
-    Asks user to press 'Enter' 
+    Asks user to press 'Enter'
     """
     print(' Welcome to\n')
-    print(figlet_format('Love Movies', font = 'standard'))
+    print(figlet_format('Love Movies', font='standard'))
     input(colored('Press Enter key to continue\n', color="green"))
     clear()
 
+
 def movie_choice():
     """
-    
+
     Displays ticket prices and max no. of tickets per transaction.
     Presents user with choice of 4 movies and asks user for input.
     """
-    print('Please select the movie you would like to see. All tickets cost €10.')
+    print('Please select the movie you would like to see.')
+    print('All tickets cost €10.')
     print('Max number of tickets per transaction: 6.\n')
     print('1. The Batman')
     print('2. Star Wars: The Empire Strikes Back')
@@ -121,8 +126,9 @@ def check_available_seats(index):
 
 def snack_choice():
     """
-    
-    Presents user with 4 choices of snack and their prices and a choice of no snack.
+
+    Presents user with 4 choices of snack
+    and their prices and a choice of no snack.
     """
     clear()
     global snack_price
@@ -177,11 +183,11 @@ def snack_choice():
             os.execl(sys.executable, sys.executable, *sys.argv)
         else:
             print(colored('Sorry, we were looking for a number between 1 and 5.\n', color="red"))
-            
+
 
 def is_order_complete():
     """
-    
+
     Asks user if order is complete, if yes then end while loop. If no then continue with order.
     """
     clear()
@@ -198,7 +204,7 @@ def is_order_complete():
 
 def get_contact_details():
     """
-    
+
     Asks user for name and phone number to be used later.
     Phone number is validated using a while loop with an .isdigit() == False
     """
@@ -209,11 +215,11 @@ def get_contact_details():
     while phone_number.isdigit() == False:
         phone_number = input(colored('Phone number can only contain numbers, please try again: \n', color="red"))
     calculate_price(name, phone_number)
-        
+
 
 def calculate_price(name, phone_number):
     """
-    
+
     Calculates the total cost of all tickets purchased and any snacks.
     Tells user their name, phone number and total.
     """
@@ -228,6 +234,7 @@ def calculate_price(name, phone_number):
     print(colored(f'Thank you for booking, {name}.', color="cyan"))
     print(colored(f'If we need to contact you we will call this number: {phone_number}', color="green"))
     print(colored(f'The total price of tickets and snacks is €{overall_total}.', color="yellow"))
+
 
 def main():
     """
