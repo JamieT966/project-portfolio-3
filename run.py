@@ -157,21 +157,17 @@ def get_contact_details():
     """
     
     Asks user for name and phone number to be used later.
-    Validated using a try, except ValueError in a while loop.
     """
+    print('For the booking we will need your name and phone number. Please fill out both below\n')
     name = input('Please write your name: \n')
-    while True:
-        try:
-            phone_number = int(input('Please write your phone number: '))
-            break
-        except (ValueError):
-            print('Only numbers please\n')
+    phone_number = input('Please write your phone number: \n')
+    calculate_price(name, phone_number)
 
-
-def calculate_price():
+def calculate_price(name, phone_number):
     """
     
     Calculates the total cost of all tickets purchased and any snacks.
+    Tells user their name, phone number and total.
     """
     ticket_total = 0
 
@@ -179,6 +175,8 @@ def calculate_price():
         ticket_total = ticket_total + movies[i] * 10
 
     overall_total = int(ticket_total) + int(snack_price)
+    print(name)
+    print(phone_number)
     print('The total price of tickets and snacks is €', overall_total)
 
 def main():
@@ -190,9 +188,10 @@ def main():
     number_of_seats(movie_select)
     check_available_seats(movies)
     snack_choice()
-    calculate_price()
+    get_contact_details()
     print(movie_select)
 
 
 main()
-#get_contact_details()
+
+
