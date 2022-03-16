@@ -187,13 +187,14 @@ def get_contact_details():
     """
     
     Asks user for name and phone number to be used later.
+    Phone number is verified using a while loop with an .isdigit() == False
     """
     clear()
     print('For the booking we will need your name and phone number. Please fill out both below\n')
     name = input('Please write your name: \n')
     phone_number = input('Please write your phone number: \n')
-    while not phone_number.isdigit():
-        print('no num')
+    while phone_number.isdigit() == False:
+        phone_number = input('Phone number can only contain numbers, please try again: \n')
     calculate_price(name, phone_number)
         
 
@@ -227,6 +228,6 @@ def main():
     get_contact_details()
 
 
-#main()
-get_contact_details()
+main()
+#get_contact_details()
 
