@@ -86,8 +86,7 @@ Love Movies is in need of a cinema booking system. This booking system will allo
 |:----|:----|:----|:----|
 |When input on movie selection screen is selected the correct input is returned.|1 = The Batman|PASS|Input passes for all numbers 1-4|
 |When other input is entered on the movie selection screen an error is returned and question repeats.|cat = Sorry, we were looking for a number between 1 and 4.|PASS|Anything other than 1-4 entered results in that error message.|
-|When input on seat selection is 1-6 it runs.|1-6 input results in the
-program running.|PASS|Works.|
+|When input on seat selection is 1-6 it runs.|1-6 input results in the program running.|PASS|Works.|
 |When other input is entered on the seat selection screen an error is returned and question repeats.|dog = Sorry, we were looking for a number between 1 and 6.|PASS|Anything other than 1-6 entered results in that error message.|
 |When ‘x’ input is entered on the seat selection screen an error is returned and question repeats.|Returns user to start of program|PASS|Program does what it says.|
 |When input on snack selection screen is selected the correct input is returned.|3 = Nachos|PASS|Input passes for all numbers 1-5|
@@ -96,10 +95,8 @@ program running.|PASS|Works.|
 |When input of ‘yes’ is entered the program continues.|Yes = program continues|PASS|Program advances.|
 |When input of ‘no’ is entered the program continues.|No = program loops back to snack selection.|PASS|Program loops back to snack selection.|
 |Name input is prompted|Yes = Please write your name: appears next.|PASS|Program runs as expected.|
-|Phone number input is prompted|Yes = Please write your phone number:
-appears next.|PASS|Program runs as expected.|
-|When anything other than a number is entered an error occurs.|frog = Phone number
-can only contain numbers.|PASS|Anything that is not a digit is rejected with error.|
+|Phone number input is prompted|Yes = Please write your phone number: appears next.|PASS|Program runs as expected.|
+|When anything other than a number is entered an error occurs.|frog = Phone number can only contain numbers.|PASS|Anything that is not a digit is rejected with error.|
 |2 tickets for The Batman, Large Popcorn and Nachos|€29|PASS|Result: €29|
 |4 tickets for Star Wars: The Empire Strikes Back, Big bag of sweets and Hot Dog|€49|PASS|Result: €49|
 |5 tickets for Lord of the Rings: The Two Towers, no snacks|€50|PASS|Result: €50|
