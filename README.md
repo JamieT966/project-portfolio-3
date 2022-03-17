@@ -4,6 +4,8 @@
 
 [Github Repo](https://github.com/JamieT966/project-portfolio-3)
 
+[Love Movie | Google Sheet](https://docs.google.com/spreadsheets/d/1lRwULDPoOX6kcolSmjcIYGjfdGSxWS7DOEIY1fG5638/edit?usp=sharing)
+
 Love Movies is in need of a cinema booking system. This booking system will allow Love Movies to have customers book cinema tickets online with various movie choices. Within the same booking system customers can order as many snacks as they like or none at all. At the end the customer is presented with their details and the total cost.
 
 **The business goals of this quiz:**
@@ -22,13 +24,13 @@ Love Movies is in need of a cinema booking system. This booking system will allo
 
 * The user is first met with a welcome screen introducing them to Love Movies. Featuring Love Movies written in a pyfiglet style. With the option to start the program in green colouring. 
 
-![Love Movies Introduction Screen](media/start.png)
+![Love Movies Introduction Screen](media/intro.png)
 
 ### Love Movies | Movie Selection Screen
 
 * This screen features information on ticket price cost and displays all current movies being shown at Love Movies. There is an input required of 1-4 depending on what movie a customer would like to see.
 
-![Love Movies Movie Selection Screen](media/rules.png)
+![Love Movies Movie Selection Screen](media/movie.png)
 
 ### Love Movies | Seat Selection Screen
 
@@ -36,7 +38,7 @@ Love Movies is in need of a cinema booking system. This booking system will allo
 
 * This screen also features an exit button, that when 'x' is input, will restart the program.
 
-![Love Movies Seat Selection Screen](media/qscreen.png)
+![Love Movies Seat Selection Screen](media/seat.png)
 
 ### Love Movies | Snack Selection Screen
 
@@ -44,7 +46,7 @@ Love Movies is in need of a cinema booking system. This booking system will allo
 
 * This screen also features an exit button, that when 'x' is input, will restart the program.
 
-![Love Movies Snack Selection Screen](media/correct.png)
+![Love Movies Snack Selection Screen](media/snack.png)
 
 ### Love Movies | Order Complete? Screen
 
@@ -52,7 +54,7 @@ Love Movies is in need of a cinema booking system. This booking system will allo
 
 * If the customer inputs yes they are taken to the next screen. If the customer inputs no they are taken back to the snack selection screen to chose another snack.
 
-![Love Movies Order Complete? Screen](media/incorrect.png)
+![Love Movies Order Complete? Screen](media/done.png)
 
 ### Love Movies | Contact Details Screen
 
@@ -60,7 +62,7 @@ Love Movies is in need of a cinema booking system. This booking system will allo
 
 * The phone number input is then validated to ensure that it is a number.
 
-![Love Movies Details Screen](media/result.png)
+![Love Movies Details Screen](media/name.png)
 
 ### Love Movies | End Screen
 
@@ -106,100 +108,80 @@ can only contain numbers.|PASS|Anything that is not a digit is rejected with err
 
 ## **Bugs**
 
-* A bug that I found while creating this quiz was that when transferring the score variable from one javascript file to another was that when all answers were correct it would be one scoreless. E.g. all answers are correct but 9/10.
-I found that I was storing the score variable after I was directing the user to another page, meaning the score was 10 before clicking the next button but 9 after clicking the button.
+* I had experienced a bug/ issue when declaring the variable movies as this was given as an index but declaring a global variable for this has solved my issue.
 
-* A second bug that myself and a tutor found was that any event listeners added into my javascript file outside a function threw an error. I resolved this by using onclick attributes in my HTML files.
+* A second bug/ issue that I faced was that when adding the variables ticket_total and ticket price it threw an error. Once I converted them both to integers with the int() method it fixed itself.
 
 ## **User Experience**
 
 ### Strategy
 
-The client wanted a quiz to aid in their chemical safety training. Chemstore travels out to host the event and would like a multiple choice quiz to test attendees knowledge either at the end of the day or halfway through the day.
+Love Movies needed an online booking system to aid in their day to day operations. Without an online booking system they could not offer their customers best in class convenience.
 
 ### Scope
 
-I discussed with the client and we decided the scope of this project together. I gave an overview of what was on the table. For example, the basic outline of the quiz was to be delivered with a variable keeping track of the current page and another variable keeping track of the user's score.
+I decided that a basic online booking system that allowed the customer to book multiple seats for any movie alongside a selection of snacks that gave an end total was within scope. This system would also update a Google Sheet database of the number of seats booked.
 
-Unfortunately, due to time constraints, the ability to issue the user with a certificate based on score fell out of the scope for this project. This can be revisited at a later date.
+Unfortunately, due to time constraints, the ability to offer multiple ticket prices, such as Adult, Child and Student fell out of scope. This can be revisited at a later date.
 
 ### Structure
 
-For the main structure, I implemented a start screen hosting a modal with the rules. Once the start button is clicked then the quiz begins. For continuity, the Chemstore logo stays fixed to the top and three links are fixed to the bottom. These link to the company's website, LinkedIn and Twitter.
+For the main structure, I implemented a Love Movies welcome message with 'Love Movies' being displayed as pyfiglet. 
 
-All buttons colours invert when hovered over to demonstrate good interactive design.
+I then gave the customer a choice of 4 movies, of which 6 seats could be purchased. A snack selection of 4 snacks and an option for no snack was added.
 
-A results page tells the user their score and whether or not they need to restart the quiz.
+Finally, the customer is presented with an end screen containing their name, phone number and order total.
 
 ### Skeleton
 
-Initially, I drew out all the functions required and a rough idea of how I wanted the quiz to look.
+Initially, I drew out all the functions required and a rough idea of how I wanted the booking system to look.
 
-I then created a wireframe using Balsamiq. 
+I then created a flowchart using Lucidchart. 
 
-![Quiz Balsamiq Wireframe](media/wireframe.png)
+![Love Movies Flowchart](media/flowchart.png)
 
 ### Surface
 
-For colours, I went with the Chemstore brand colour palette as I felt these looked nice and it offered continuity across the Chemstore brand.
+For colours, I was limited to changing font colurs with the Python dependency, termcolor.
 
-```--cgreen: #98c244; --cred: #e6554d; --cnavy: #2d3347; white #ffffff```
+For inputs I changed the font colour to green. For error messsages I changed the font colour to red. I also changed the font colour of anything that would restart the program to cyan.
 
-![Colour Pallete Used For Chemstore Quiz](media/colours.png)
+I also did a small bit of work to the Heroku terminal, changing the background to a dark red and the button colour to a dark green. I have also centred the terminal and button.
+
+
+![Love Movies Heroku Terminal](media/heroku.png)
 
 ## **Technologies**
 
 1. HTML
 2. CSS
-3. JavaScript
+3. Python
 4. Gitpod.io - for writing the code. Using the command line for committing and pushing to Git Hub
 5. GitHub - Used to host repository
-6. GIT - for version control of the project.
-7. [Beautifier](https://beautifier.io/) - Used to beautify my HTML, CSS and JavaScript.
+6. GIT - For version control of the project.
+7. Heroku - To deploy my project.
+8. Google Cloud -  To control the API between my Python programme and Google Sheets.
 
 ## **Deployment**
 
-The website is hosted by GitHub Pages and the live page can be found here: [Chemstore Chemical Awareness Quiz](https://jamiet966.github.io/project-portfolio-2/)
+The website is hosted by Heroku and the live page can be found here: [Love Movies Live Site](https://love-movies123.herokuapp.com/)
 
-**The Steps I Took To Deploy on GitHub Pages:**
+**The Steps I Took To Deploy on Heroku:**
 
-1. Went to github.com
-2. Under Repositories click on the desired project.
-3. Click on Settings just over the green Gitpod button.
-4. On the left navigation menu, find and click Pages.
-5. Under Source, change Branch to main and the files to /root and click save.
-6. Wait a few minutes and your repository will be live on Github Pages.
+1. Went to herokuapp.com
+2. Clicked 'Create new app', gave app unique name and set region to Europe.
+3. Went to Settings tab first. Went to config vars, added creds.json and copy pasted the file contents. I also added another config var, PORT 8000.
+4. Still in settings, I went down to build pack and added Python as well as Node.js.
+5. Went to Deploy, selected Github and chose 'Enable Automatic Deploys'.
 
-![Your Repository was Published](media/published.png)
-
-As this website is hosted by GitHub pages it is directly deployed from the repository's master branch. This means that the deployed site will automatically update from any commits from the master branch of my repository.
-
-**The Steps I Took To Push Changes to Live website:**
-
-1. When have completed a section of code, in the terminal window: `git add .` or `git add index.html "or other file"`.
-2. `git commit -m "Your commit message here`.
-3. `git push`.
-
-To run a local copy, you can clone into any editor by pasting this: `git clone https://github.com/JamieT966/project-portfolio-2.git` into your editor.
+This website is hosted by Heroku and because it is connected to the Github repository directly with enable automatic deploys this live site will update anytime I push a change to Github.
 
 ## **Credits**
 
-### Content
-
-* All content came from the Chemstore chemical awareness training PowerPoint presentation. This gave me everything I needed to create questions and answers.
-
-### Media
-
-* The Chemstore logo came from the Chemstore website. [Chemstore.ie](https://www.chemstore.ie/)
-
 ### Acknowledgments
 
-* First and foremost my mentor Brian Macharia, has been a great help on this project.
+* I would like to thank my mentor Brian Macharia, he has been a great help on this project and my coding journey.
 
-* The Code Institute tutors, in particular, Rebecca and John were immensely helpful and patient guiding me through solving the issues I was having.
+* I would like to credit this students event scheduler for giving me the idea of having a 'clear' function that could be used to clear the terminal. [Event Scheduler](https://github.com/elainebroche-dev/ms3-event-scheduler)
 
-* I would like to credit this students quiz for giving me the idea of having a 'hide' class that could be toggled on and off depending on the need. [Geo Quiz](https://github.com/lee-joanne/geo-quiz)
-
-* I also need to credit W3 schools for their modal instructions that I completely copied and then adjusted to the needs of my quiz. [W3 Schools Modals](https://www.w3schools.com/howto/howto_css_modals.asp)
-
-* I also watched many YouTube videos for ideas but I did not follow any particular video.
+* I also followed this Stack Overflow post about how to restart a program based on user input [Stack Overflow](https://stackoverflow.com/questions/14907067/how-do-i-restart-a-program-based-on-user-input)
