@@ -85,8 +85,7 @@ Love Movies is in need of a cinema booking system. This booking system will allo
 |Test Description|Expected Outcome|PASS/FAIL|Comments|
 |:----|:----|:----|:----|
 |When input on movie selection screen is selected the correct input is returned.|1 = The Batman|PASS|Input passes for all numbers 1-4|
-|When other input is entered on the movie selection screen an error is returned and question repeats.|cat = Sorry, we were looking for a number between 1 and 4.|PASS|Anything other than 1-4 entered results in that error
-message.|
+|When other input is entered on the movie selection screen an error is returned and question repeats.|cat = Sorry, we were looking for a number between 1 and 4.|PASS|Anything other than 1-4 entered results in that error message.|
 |When input on seat selection is 1-6 it runs.|1-6 input results in the
 program running.|PASS|Works.|
 |When other input is entered on the seat selection screen an error is returned and question repeats.|dog = Sorry, we were looking for a number between 1 and 6.|PASS|Anything other than 1-6 entered results in that error message.|
