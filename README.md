@@ -80,31 +80,29 @@ Love Movies is in need of a cinema booking system. This booking system will allo
 
 ## **Testing**
 
-### Validator Testing
-
-* [W3C Markup Validation](https://validator.w3.org/)
-* [W3C CSS Validation](https://jigsaw.w3.org/css-validator/)
-
-I validated my HTML and CSS with the W3C Markup Validator and W3C CSS Validator to check the validity of my code.
-
-### Client Story Testing
-
-* I have added a rules modal at the start page to make the user aware of what is expected of them.
-
-* There is currently a restart quiz button on every page so the user can restart the quiz at any time. The logo will also take the user back to the start screen as I believe that is expected of a logo.
-
-* I have added a question counter to the top of the quiz screen. This makes it abundantly clear to the user exactly what question they are on and how many questions are left.
-
-### Manual Testing
-
-* I have tested all links and all internal and external links are fully working. I have also tested when clicking the site logo and that returns the user to the home page. Any external links have a ```target="_blank"```, ensuring they open in a new tab.
-
-* The quiz only allows you to select one answer per question, it then disables all other choice buttons and displays a correct or incorrect message.
-
-* The website has been tested across all major browsers (Chrome, Firefox, Edge, Safari, etc) and all emulated mobile devices using Google Chrome Developer Tools. While testing I realised that my website was not fully responsive on very small screens, such as an iPhone 5. I had to add width and max-width to resolve this.
-
-* I ran a Google lighthouse report that had very good results. The full report can be read [here.](https://pdfhost.io/edit?doc=6fdd79c5-8798-4ea9-97fd-3e80b8b8397c)
-![Google Lightouse Report](media/lighthouse.png) 
+|Test Description|Expected Outcome|PASS/FAIL|Comments|
+|:----|:----|:----|:----|
+|When input on movie selection screen is selected the correct input is returned.|1 = The Batman|PASS|Input passes for all numbers 1-4|
+|When other input is entered on the movie selection screen an error is returned and question repeats.|cat = Sorry, we were looking for a number between 1 and 4.|PASS|Anything other than 1-4 entered results in that error
+message.|
+|When input on seat selection is 1-6 it runs.|1-6 input results in the
+program running.|PASS|Works.|
+|When other input is entered on the seat selection screen an error is returned and question repeats.|dog = Sorry, we were looking for a number between 1 and 6.|PASS|Anything other than 1-6 entered results in that error message.|
+|When ‘x’ input is entered on the seat selection screen an error is returned and question repeats.|Returns user to start of program|PASS|Program does what it says.|
+|When input on snack selection screen is selected the correct input is returned.|3 = Nachos|PASS|Input passes for all numbers 1-5|
+|When other input is entered on the seat selection screen an error is returned and question repeats.|72 = Sorry, we were looking for a number between 1 and 5.|PASS|Anything other than 1-5 entered results in that error message.|
+|When ‘x’ input is entered on the snack selection screen an error is returned and question repeats.|Returns user to start of program|PASS|Program does what it says.|
+|When input of ‘yes’ is entered the program continues.|Yes = program continues|PASS|Program advances.|
+|When input of ‘no’ is entered the program continues.|No = program loops back to snack selection.|PASS|Program loops back to snack selection.|
+|Name input is prompted|Yes = Please write your name: appears next.|PASS|Program runs as expected.|
+|Phone number input is prompted|Yes = Please write your phone number:
+appears next.|PASS|Program runs as expected.|
+|When anything other than a number is entered an error occurs.|frog = Phone number
+can only contain numbers.|PASS|Anything that is not a digit is rejected with error.|
+|2 tickets for The Batman, Large Popcorn and Nachos|€29|PASS|Result: €29|
+|4 tickets for Star Wars: The Empire Strikes Back, Big bag of sweets and Hot Dog|€49|PASS|Result: €49|
+|5 tickets for Lord of the Rings: The Two Towers, no snacks|€50|PASS|Result: €50|
+|1 ticket for Iron Man, Large Popcorn and Hot Dog|€20|PASS|Result: €20|
 
 ## **Bugs**
 
